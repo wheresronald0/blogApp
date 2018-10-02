@@ -1,0 +1,24 @@
+<% include partials/header.ejs %>
+
+<div class="ui main text container segment">
+    <div class="ui huge header">
+        <%=blog.title%>
+    </div>
+    <div class="ui top attached">
+        <div class="item">
+            <img class="ui centered rounded image" src="<%= blog.image%>">
+            <div class="content">
+                <span>
+                    <%=blog.created%></span>
+            </div>
+            <div class="description">
+                <p>
+                    <%-blog.body%>
+                    <%# the dash instead of equals will allow users to input html in the description box- it evaluates the html and renders- theres an express santitizing package that will scrub out all the script tags so users can't run JS%>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<% include partials/footer.ejs %>
